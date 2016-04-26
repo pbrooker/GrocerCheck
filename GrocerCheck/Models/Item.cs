@@ -30,7 +30,7 @@ namespace GrocerCheck.Models
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
-        public decimal BySizePrice { get; set; }
+        public decimal Price { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd", ApplyFormatInEditMode = true)]
