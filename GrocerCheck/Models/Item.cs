@@ -10,6 +10,8 @@ namespace GrocerCheck.Models
     public abstract class Item
     {
 
+        public int ItemID { get; set; }
+
         [Required]
         [Display(Name = "Product Name")]
         [StringLength(65)]
@@ -34,6 +36,13 @@ namespace GrocerCheck.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd", ApplyFormatInEditMode = true)]
         [Display(Name = "Date Updated")]
         public DateTime Updated { get; set; }
+
+
+        //Navigation
+
+        public virtual ICollection<Brand> Brands { get; set; }
+        public virtual ICollection<Size> Sizes { get; set; }
+        public virtual ICollection<Grocer> Grocers { get; set; }
 
     }
 }

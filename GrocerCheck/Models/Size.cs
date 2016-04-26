@@ -13,5 +13,9 @@ namespace GrocerCheck.Models
         [Required]
         [Display(Name ="Description - eg Jumbo Pack")]
         public string SizeDescription { get; set; }
+
+        //Navigation
+
+        public virtual ICollection<Item> Items { get; set; }
     }
 }
