@@ -221,6 +221,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\favicon.png" />
+    <Content Include="images\grocer-check-jumbotron-image.jpg" />
     <Content Include="images\grocer-check-logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
