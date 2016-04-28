@@ -21,6 +21,8 @@ namespace GrocerCheck.Models
 
         public virtual ICollection<Brand> Brands { get; set; }
 
+        public virtual ICollection<Item> Items { get; set; }
+
         public virtual ICollection<ItemByQuantity> Itembyquantity { get; set; }
 
         public virtual ICollection<ItemBySize> Itembysize { get; set; }

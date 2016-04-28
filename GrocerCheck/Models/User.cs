@@ -33,5 +33,9 @@ namespace GrocerCheck.Models
 
         public bool Admin { get; set; }
 
+        public virtual ICollection<Brand> Brands { get; set; }
+        public virtual ICollection<Size> Sizes { get; set; }
+
+        public virtual ICollection<Grocer> Grocers { get; set; }
     }
 }

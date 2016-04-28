@@ -168,8 +168,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GrocerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\GrocerCheckContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,6 +179,18 @@
     <Compile Include="Migrations\GrocerCheckMigrations\201604261842116_InitialCreate1.cs" />
     <Compile Include="Migrations\GrocerCheckMigrations\201604261842116_InitialCreate1.Designer.cs">
       <DependentUpon>201604261842116_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201604271631105_UpdatedUsers.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201604271631105_UpdatedUsers.Designer.cs">
+      <DependentUpon>201604271631105_UpdatedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201604271710367_FixedDatabaseName.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201604271710367_FixedDatabaseName.Designer.cs">
+      <DependentUpon>201604271710367_FixedDatabaseName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201604281709303_UpdatedGrocers.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201604281709303_UpdatedGrocers.Designer.cs">
+      <DependentUpon>201604281709303_UpdatedGrocers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GrocerCheckMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -197,6 +211,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\GrocerIndexData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -255,6 +270,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Grocer\Create.cshtml" />
+    <Content Include="Views\Grocer\Delete.cshtml" />
+    <Content Include="Views\Grocer\Details.cshtml" />
+    <Content Include="Views\Grocer\Edit.cshtml" />
+    <Content Include="Views\Grocer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -270,6 +295,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604261842116_InitialCreate1.resx">
       <DependentUpon>201604261842116_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604271631105_UpdatedUsers.resx">
+      <DependentUpon>201604271631105_UpdatedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604271710367_FixedDatabaseName.resx">
+      <DependentUpon>201604271710367_FixedDatabaseName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604281709303_UpdatedGrocers.resx">
+      <DependentUpon>201604281709303_UpdatedGrocers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

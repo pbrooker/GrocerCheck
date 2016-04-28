@@ -13,5 +13,9 @@ namespace GrocerCheck.Models
         [Required]
         [Display(Name ="Category Name")]
         public string CategoryName { get; set; }
+
+        public virtual ICollection<Item> Items { get; set; }
+        public virtual ICollection<ItemByQuantity> ItemsByQuantity { get; set; }
+        public virtual ICollection<ItemBySize> ItemsBySize { get; set; }
     }
 }

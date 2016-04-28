@@ -1,0 +1,46 @@
+﻿@model  GrocerCheck.viewModels.GrocerIndexData
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th>
+                    GrocerName
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Grocers)
+            {
+
+                // highlight row
+                string selectedRow = "";
+                if (item.GrocerID == ViewBag.GrocerID)
+                {
+                    selectedRow = "success"; //success is Bootstrap success color
+                }
+                <tr class="@selectedRow">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrocerName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Select", "Index", new { id = item.GrocerID }) |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.GrocerID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.GrocerID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.GrocerID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
