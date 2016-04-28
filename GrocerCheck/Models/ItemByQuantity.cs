@@ -7,11 +7,8 @@ using System.Web;
 
 namespace GrocerCheck.Models
 {
-    public class ItemsByQuantity:Item
+    public class ItemByQuantity:Item
     {
-
-        public int ItemByQuantityID { get; set; }
-
 
         public int Quantity { get; set; }
 

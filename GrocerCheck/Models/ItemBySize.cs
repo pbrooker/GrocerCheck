@@ -7,10 +7,8 @@ using System.Web;
 
 namespace GrocerCheck.Models
 {
-    public class ItemsBySize:Item
+    public class ItemBySize:Item
     {
-        public int ItemBySizeID { get; set; }
-
 
         [Display(Name ="Size")]
         public int Size { get; set; }

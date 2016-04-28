@@ -170,17 +170,23 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DAL\GrocerCheckContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201604261842116_InitialCreate1.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201604261842116_InitialCreate1.Designer.cs">
+      <DependentUpon>201604261842116_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Grocer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\ItemsByQuantity.cs" />
-    <Compile Include="Models\ItemsBySize.cs" />
+    <Compile Include="Models\ItemByQuantity.cs" />
+    <Compile Include="Models\ItemBySize.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Size.cs" />
     <Compile Include="Models\User.cs" />
@@ -263,6 +269,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604261842116_InitialCreate1.resx">
+      <DependentUpon>201604261842116_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

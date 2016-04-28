@@ -14,5 +14,14 @@ namespace GrocerCheck.Models
         [Required]
         [Display(Name ="Brand Name")]
         public string BrandName { get; set; }
+
+        public int Item { get; set; }
+
+
+        //Navigation
+
+        public virtual ICollection<Item> Items { get; set; }
+        public virtual ICollection<Brand> Brands { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
     }
 }
