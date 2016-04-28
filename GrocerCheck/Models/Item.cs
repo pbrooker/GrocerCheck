@@ -44,5 +44,7 @@ namespace GrocerCheck.Models
         public virtual ICollection<Size> Sizes { get; set; }
         public virtual ICollection<Grocer> Grocers { get; set; }
 
+        public virtual Item item { get; set; }
+
     }
 }

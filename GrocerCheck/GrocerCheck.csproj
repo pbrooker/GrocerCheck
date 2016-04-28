@@ -192,6 +192,10 @@
     <Compile Include="Migrations\GrocerCheckMigrations\201604281709303_UpdatedGrocers.Designer.cs">
       <DependentUpon>201604281709303_UpdatedGrocers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201604281816417_UpdatedGrocers2.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201604281816417_UpdatedGrocers2.Designer.cs">
+      <DependentUpon>201604281816417_UpdatedGrocers2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\GrocerCheckMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -305,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604281709303_UpdatedGrocers.resx">
       <DependentUpon>201604281709303_UpdatedGrocers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604281816417_UpdatedGrocers2.resx">
+      <DependentUpon>201604281816417_UpdatedGrocers2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

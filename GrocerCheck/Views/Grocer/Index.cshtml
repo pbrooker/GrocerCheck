@@ -73,3 +73,27 @@
         </div>
     </div>
 }
+
+
+@if (Model.Items != null)
+{
+
+    <h3>Items available in: @ViewBag.CategoryName</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                </tr>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.ItemName</td>
+                        <td>@item.Price</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+}

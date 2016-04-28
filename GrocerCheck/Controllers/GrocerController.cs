@@ -52,15 +52,26 @@ namespace GrocerCheck.Controllers
                 var selectedCategory = viewModel.Categories
                                         .Where(y => y.CategoryID == categoryID.Value)
                                         .Single();
-                db.Entry(selectedCategory).Collection(y => y.Items).Load();
-                foreach (Item item in selectedCategory.Items)
+                db.Entry(selectedCategory).Collection(y => y.Brands).Load();
+                foreach (Brand brand in selectedCategory.Brands)
                 {
-                    db.Entry(item).Reference(y => y.ItemName).Load();
+                    db.Entry(brand).Reference(y => y.BrandName).Load();
                 }
-                viewModel.Items = selectedCategory.Items;
+                viewModel.Brands = selectedCategory.Brands;
 
                 ViewBag.CategoryName = selectedCategory.CategoryName;
 
+            }
+
+            if(itemID !=null)
+            {
+                ViewBag.ItemID = itemID.Value;
+
+                var selectedItem = viewModel.Items
+                                    .Where(x => x.ItemID == itemID.Value)
+                                    .Single();
+                db.Entry(selectedItem).Reference(x => x.item).Load();
+               
             }
             return View(viewModel);
         }
