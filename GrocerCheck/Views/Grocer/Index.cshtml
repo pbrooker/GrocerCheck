@@ -44,3 +44,32 @@
         </table>
     </div>
 </div>
+
+@if (Model.Categories != null)
+{
+    //Only if instructors has assigned course(s)
+    <h3>Categories carried by: @ViewBag.GrocerName </h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>Category Name</th>
+                </tr>
+
+                @foreach (var item in Model.Categories)
+                {
+                    //for selected row highlight
+                    string selectedRow = "";
+                    if (item.CategoryID == ViewBag.categoryID)
+                    {
+                        selectedRow = "success";
+                    }
+                    <tr class="@selectedRow">
+                        <td>@Html.ActionLink("Select", "Index", new { itemID = item.Items })</td>
+                        <td>@item.CategoryName</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+}
