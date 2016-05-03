@@ -49,9 +49,29 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.6.3.4\lib\SendGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi, Version=1.3.1.0, Culture=neutral, PublicKeyToken=2ae73662c35d80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.3.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGridMail, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.6.3.4\lib\SendGridMail.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -112,9 +132,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -168,9 +185,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BrandsController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\GrocerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemByQuantitiesController.cs" />
+    <Compile Include="Controllers\ItemBySizeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SizeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\GrocerCheckContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,6 +217,26 @@
     <Compile Include="Migrations\GrocerCheckMigrations\201604281816417_UpdatedGrocers2.cs" />
     <Compile Include="Migrations\GrocerCheckMigrations\201604281816417_UpdatedGrocers2.Designer.cs">
       <DependentUpon>201604281816417_UpdatedGrocers2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201605021739491_UpdatedCalculations.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201605021739491_UpdatedCalculations.Designer.cs">
+      <DependentUpon>201605021739491_UpdatedCalculations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201605021818323_Updatedtypo.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201605021818323_Updatedtypo.Designer.cs">
+      <DependentUpon>201605021818323_Updatedtypo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201605031755366_Adjustments to models.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201605031755366_Adjustments to models.Designer.cs">
+      <DependentUpon>201605031755366_Adjustments to models.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201605032037017_supportformenus.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201605032037017_supportformenus.Designer.cs">
+      <DependentUpon>201605032037017_supportformenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\GrocerCheckMigrations\201605032051299_expandedMenuWork.cs" />
+    <Compile Include="Migrations\GrocerCheckMigrations\201605032051299_expandedMenuWork.Designer.cs">
+      <DependentUpon>201605032051299_expandedMenuWork.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\GrocerCheckMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -285,6 +327,32 @@
     <Content Include="Views\Grocer\Details.cshtml" />
     <Content Include="Views\Grocer\Edit.cshtml" />
     <Content Include="Views\Grocer\Index.cshtml" />
+    <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\ItemBySize\Create.cshtml" />
+    <Content Include="Views\ItemBySize\Delete.cshtml" />
+    <Content Include="Views\ItemBySize\Details.cshtml" />
+    <Content Include="Views\ItemBySize\Edit.cshtml" />
+    <Content Include="Views\ItemBySize\Index.cshtml" />
+    <Content Include="Views\ItemByQuantities\Create.cshtml" />
+    <Content Include="Views\ItemByQuantities\Delete.cshtml" />
+    <Content Include="Views\ItemByQuantities\Details.cshtml" />
+    <Content Include="Views\ItemByQuantities\Edit.cshtml" />
+    <Content Include="Views\ItemByQuantities\Index.cshtml" />
+    <Content Include="Views\Brands\Create.cshtml" />
+    <Content Include="Views\Brands\Delete.cshtml" />
+    <Content Include="Views\Brands\Details.cshtml" />
+    <Content Include="Views\Brands\Edit.cshtml" />
+    <Content Include="Views\Brands\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Size\Create.cshtml" />
+    <Content Include="Views\Size\Delete.cshtml" />
+    <Content Include="Views\Size\Details.cshtml" />
+    <Content Include="Views\Size\Edit.cshtml" />
+    <Content Include="Views\Size\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,6 +380,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201604281816417_UpdatedGrocers2.resx">
       <DependentUpon>201604281816417_UpdatedGrocers2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201605021739491_UpdatedCalculations.resx">
+      <DependentUpon>201605021739491_UpdatedCalculations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201605021818323_Updatedtypo.resx">
+      <DependentUpon>201605021818323_Updatedtypo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201605031755366_Adjustments to models.resx">
+      <DependentUpon>201605031755366_Adjustments to models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201605032037017_supportformenus.resx">
+      <DependentUpon>201605032037017_supportformenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\GrocerCheckMigrations\201605032051299_expandedMenuWork.resx">
+      <DependentUpon>201605032051299_expandedMenuWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

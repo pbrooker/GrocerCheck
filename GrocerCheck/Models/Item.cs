@@ -17,12 +17,16 @@ namespace GrocerCheck.Models
         [StringLength(65)]
         public string ItemName { get; set; }
 
+        [Display(Name = "Brand Name")]
         public int BrandID { get; set; }  //FK
 
+        [Display(Name ="Grocer Name")]
         public int GrocerID { get; set; }   //FK
 
+        [Display(Name ="Category Name")]
         public int CategoryID { get; set; } //FK
 
+        [Display(Name ="Size Name")]
         public int SizeID { get; set; }  //FK
 
         [Display(Name = "Barcode or Standard ID")]
@@ -38,13 +42,16 @@ namespace GrocerCheck.Models
         public DateTime Updated { get; set; }
 
 
+       
+
+
         //Navigation
 
         public virtual ICollection<Brand> Brands { get; set; }
         public virtual ICollection<Size> Sizes { get; set; }
         public virtual ICollection<Grocer> Grocers { get; set; }
 
-        public virtual Item item { get; set; }
+        public virtual Item Items { get; set; }
 
     }
 }

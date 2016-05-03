@@ -20,6 +20,10 @@ namespace GrocerCheck.DAL
         public DbSet<Size> Sizes { get; set; }
         public DbSet<User> Users { get; set; }
 
+       // public DbSet<Item> Item { get; set; }
+
+
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

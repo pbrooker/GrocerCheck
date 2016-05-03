@@ -70,7 +70,7 @@ namespace GrocerCheck.Controllers
                 var selectedItem = viewModel.Items
                                     .Where(x => x.ItemID == itemID.Value)
                                     .Single();
-                db.Entry(selectedItem).Reference(x => x.item).Load();
+                db.Entry(selectedItem).Reference(x => x.Items).Load();
                
             }
             return View(viewModel);

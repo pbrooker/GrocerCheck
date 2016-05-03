@@ -12,7 +12,17 @@ namespace GrocerCheck.Models
 
         public int Quantity { get; set; }
 
-    
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Display(Name = "Calculated price")]
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "money")]
+        public decimal CalculatedPrice
+        {
+            get { return Price / Quantity; }
+
+            private set { }
+        }
+
 
     }
 }
